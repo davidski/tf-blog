@@ -55,7 +55,7 @@ data "aws_route53_zone" "zone" {
 module "blogcdn" {
   source = "git://github.com/davidski/tf-cloudfrontssl.git"
 
-  origin_domain_name  = "ghs.google.com"
+  origin_domain_name  = "justgovernance.blogger.com"
   origin_id           = "googleblogger"
   alias               = "blog.severski.net"
   acm_certificate_arn = "${data.aws_acm_certificate.blog.arn}"

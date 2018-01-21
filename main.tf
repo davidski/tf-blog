@@ -51,12 +51,6 @@ data "aws_route53_zone" "zone" {
   -------------
 */
 
-# Data source for ACM certificate
-data "aws_acm_certificate" "blog" {
-  provider = "aws.east_1"
-  domain   = "blog.severski.net"
-}
-
 # configure cloudfront SSL caching for Google Blogger hosted blog
 module "blogcdn" {
   source = "git://github.com/davidski/tf-cloudfrontssl.git"

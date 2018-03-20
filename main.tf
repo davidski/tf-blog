@@ -51,12 +51,14 @@ data "aws_route53_zone" "zone" {
   -------------
 */
 
-# configure cloudfront SSL caching for Google Blogger hosted blog
+# configure cloudfront SSL caching for S3 hosted static blog
 module "blogcdn" {
-  source = "git://github.com/davidski/tf-cloudfrontssl.git"
+  source = "git://github.com/davidski/tf-cloudfronts3.git"
 
-  origin_domain_name  = "justgovernance.blogger.com"
-  origin_id           = "googleblogger"
+  #source = "../../modules/tf-cloudfronts3"
+
+  bucket_name         = "sysiphus-blog"
+  origin_id           = "blog_bucket"
   alias               = "blog.severski.net"
   acm_certificate_arn = "${data.aws_acm_certificate.blog.arn}"
   project             = "${var.project}"

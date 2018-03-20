@@ -5,7 +5,7 @@ terragrunt = {
     config {
       encrypt = true
       bucket = "infrastructure-severski"
-      key = "terraform/persaonal-blog.tfstate"
+      key = "terraform/personal-blog.tfstate"
       region = "us-west-2"
     }
   }

@@ -57,7 +57,7 @@ module "blogcdn" {
 
   #source = "../../modules/tf-cloudfronts3"
 
-  bucket_name         = "sysiphus-blog"
+  bucket_name         = "sisyphus-blog"
   origin_id           = "blog_bucket"
   alias               = "blog.severski.net"
   acm_certificate_arn = "${data.aws_acm_certificate.blog.arn}"

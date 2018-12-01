@@ -63,4 +63,5 @@ module "blogcdn" {
   acm_certificate_arn = "${data.aws_acm_certificate.blog.arn}"
   project             = "${var.project}"
   audit_bucket        = "${data.terraform_remote_state.main.auditlogs}"
+  comment             = "sysiphus-blog"
 }

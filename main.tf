@@ -1,6 +1,7 @@
 provider "aws" {
   region  = "${var.aws_region}"
   profile = "${var.aws_profile}"
+  version = "~> 1.54"
 
   assume_role {
     role_arn = "arn:aws:iam::754135023419:role/administrator-service"
@@ -10,6 +11,7 @@ provider "aws" {
 provider "aws.east_1" {
   region  = "us-east-1"
   profile = "${var.aws_profile}"
+  version = "~> 1.54"
 
   assume_role {
     role_arn = "arn:aws:iam::754135023419:role/administrator-service"

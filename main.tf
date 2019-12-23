@@ -1,7 +1,6 @@
 provider "aws" {
   region  = var.aws_region
   profile = var.aws_profile
-  version = "~> 2.7"
 
   assume_role {
     role_arn = "arn:aws:iam::754135023419:role/administrator-service"
@@ -12,7 +11,6 @@ provider "aws" {
   alias   = "east_1"
   region  = "us-east-1"
   profile = var.aws_profile
-  version = "~> 2.7"
 
   assume_role {
     role_arn = "arn:aws:iam::754135023419:role/administrator-service"
@@ -49,10 +47,10 @@ data "aws_route53_zone" "zone" {
 */
 
 resource "aws_acm_certificate" "blog" {
-  provider                = aws.east_1
+  provider = aws.east_1
 
-  domain_name               = "blog.severski.net"
-  validation_method         = "DNS"
+  domain_name       = "blog.severski.net"
+  validation_method = "DNS"
 
   tags = {
     managed_by = "Terraform"
@@ -79,8 +77,8 @@ resource "aws_acm_certificate_validation" "blog" {
 
 # configure cloudfront SSL caching for S3 hosted static blog
 module "blogcdn" {
-  providers                = { aws = aws.east_1, aws.bucket = aws}
-  source = "git://github.com/davidski/tf-cloudfronts3.git"
+  providers = { aws = aws.east_1, aws.bucket = aws }
+  source    = "git://github.com/davidski/tf-cloudfronts3.git"
 
   #source = "../../modules/tf-cloudfronts3"
 

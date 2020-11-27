@@ -16,6 +16,9 @@ provider "aws" {
     role_arn = "arn:aws:iam::754135023419:role/administrator-service"
   }
 }
+terraform {
+  backend "s3" {}
+}
 
 # Data source for the availability zones in this zone
 data "aws_availability_zones" "available" {}

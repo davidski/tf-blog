@@ -1,5 +1,7 @@
 # Personal Blog
 
+> *DEPRECATED* This component has been merged into my primary mono-repo.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
